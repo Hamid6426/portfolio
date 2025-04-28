@@ -29,10 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased w-full`}>
         <AuthProvider>
           <ToastContainer position="top-center" autoClose={2000} />
-          <main className="bg-[#001] min-h-screen flex flex-col justify-center items-center w-full">
+          <main className="bg-[#000011] min-h-screen flex flex-col justify-center items-center w-full">
             <section className="h-[5.5rem] sm:h-24 w-full">
               <Navbar />
             </section>
