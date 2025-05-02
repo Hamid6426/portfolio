@@ -1,4 +1,5 @@
 "use client";
+import SocialLinkBalls from "@/components/SocialLinkBalls";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -20,50 +21,33 @@ export default function Home() {
   };
 
   return (
-    <main className="w-full h-[calc(100vh_-_6rem)] absolute">
-      <section className="absolute top-0 right-0 inset-0 w-full h-full bg-[#000011] overflow-hidden">
-        <svg
-          width="100%"
-          height="100%"
-          id="svg"
-          viewBox="0 0 1440 450"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute inset-0 w-full h-full transition duration-300 ease-in-out delay-150"
-        >
-          <defs>
-            <linearGradient id="gradient" x1="50%" y1="0%" x2="50%" y2="100%">
-              <stop offset="0%" stop-color="#001"></stop>
-              <stop offset="100%" stop-color="#A0F"></stop>
-            </linearGradient>
-          </defs>
-          <path
-            d="M 0,700 L 0,337 C 95.25,270.9107142857143 190.5,204.82142857142858 298,216 C 405.5,227.17857142857142 525.2500000000001,315.625 671,292 C 816.7499999999999,268.375 988.5,132.67857142857142 1121,84 C 1253.5,35.32142857142858 1346.75,73.66071428571429 1440,112 L 1440,700 L 0,700 Z"
-            stroke="none"
-            stroke-width="0"
-            fill="url(#gradient)"
-            fill-opacity="1"
-            className="transition-all duration-300 ease-in-out delay-150 desktop-wave-animation"
-          ></path>
-        </svg>
-        {/* <Image src="/hamid-profile.png" alt="profile picture" width={200} height={200} className="rounded-[px] absolute top-[10%] left-[10%]" /> */}
-        <div className="rounded-[px] absolute top-[10%] md:top-[15%] left-[3%] xl:left-[5%]">
-          <div className="w-full flex flex-col md:flex-row justify-center sm:justify-start item-center">
-          <div className="text-3xl md:text-7xl font-black text-[#A0F]">MIAN HAMID</div>
-          <div className="text-3xl md:text-7xl font-black text-[#A0F]">UR REHMAN</div>
+    <main className="w-full max-w-6xl mx-auto h-fit md:h-[calc(100vh_-_4rem)]">
+      <div className="flex h-full flex-col-reverse md:flex-row">
+        <section className="w-full md:w-7/12 flex flex-col justify-center item-center text-text h-full pl-3 md:pl-6 text-sm">
+          <div className="text-xl sm:text-2xl font-bold">FULL STACK DEVELOPER</div>
+          <div className="text-3xl font-bold my-2">Hello, I'm</div>
+          <div className="text-4xl font-bold text-primary mb-3">MIAN HAMID UR REHMAN</div>
+          <div className="leading-relaxed">
+            My name is Mian Hamid Ur Rehman from Nowshera, Pakistan. A Full-Stack Web Developer specializing in React framework with MERN Stack, and Next.js Architecture. Proficient in both front-end
+            and back-end as well as creating user interfaces with Figma for efficient and user-centered web applications and deliver seamless experience across multiple devices
           </div>
-          <div className="text-xl font-bold text-[#F0A] mt-8">FULL STACK DEVELOPER</div>
-          <div className="flex gap-6 mt-12">
-            <button onClick={() => handleNavigate("work")} className="cursor-pointer bg-[#a0f] font-semibold text-white px-4 py-2 text-lg rounded-md hover:bg-[#f0a]">
-              See My Work
+          <div className="flex flex-wrap gap-6 mt-6">
+            <SocialLinkBalls />
+          </div>
+          <div className="flex flex-col md:flex-row gap-6 mt-6">
+            <button onClick={() => handleNavigate("work")} className="cursor-pointer bg-primary font-semibold text-white px-4 py-2 hover:bg-accent">
+              Check My Works
             </button>
-
-            <button onClick={handleResumeDownload} className="cursor-pointer bg-[#a0f] font-semibold text-white px-4 py-2 text-lg rounded-md hover:bg-[#f0a]">
+            <button onClick={handleResumeDownload} className="cursor-pointer bg-primary font-semibold text-white px-4 py-2 hover:bg-accent">
               Download My Resume
             </button>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className= "w-full md:w-5/12 flex flex-col justify-center items-center h-full">
+          <Image src="/hamid-profile.png" alt="profile picture" width={500} height={500} className="w-40 md:w-60 lg:w-80 rounded-full border-2 border-primary" />
+        </section>
+      </div>
     </main>
   );
 }

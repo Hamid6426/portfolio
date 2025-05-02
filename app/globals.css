@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Color Palette */
+  --color-primary: #FF0044;
+  --color-accent: #FF0066;
+  --color-background: #000011;
+  --color-text: #FFFFFF;
+
+  /* Shadow Token */
+  --shadow-soft: 0 2px 8px #bbb;
+}
+
 .desktop-wave-animation {
   animation: desktopWaveAnimation 12s linear infinite;
 }
