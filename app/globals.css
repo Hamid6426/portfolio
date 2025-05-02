@@ -5,6 +5,7 @@
 @theme {
   /* Color Palette */
   --color-primary: #FF0044;
+  --color-secondary: #204;
   --color-accent: #FF0066;
   --color-background: #000011;
   --color-text: #FFFFFF;

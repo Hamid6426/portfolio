@@ -34,7 +34,7 @@ export default function RootLayout({
           <ToastContainer position="top-center" autoClose={2000} />
           <main className="bg-background min-h-screen flex flex-col items-center w-full">
             <Navbar />
-            <section className="w-full">{children}</section>
+            <section className="w-full h-full">{children}</section>
           </main>
         </AuthProvider>
       </body>

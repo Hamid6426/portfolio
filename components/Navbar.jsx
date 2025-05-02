@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import SocialLinkBalls from "./SocialLinkBalls";
-import { MdClose, MdMenu } from "react-icons/md";
+import { MdMenu } from "react-icons/md";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -31,13 +31,19 @@ export default function Navbar() {
           <Link href="/projects" className="hover:text-accent">
             PROJECTS
           </Link>
+          <Link href="/services" className="hover:text-accent">
+            SERVICES
+          </Link>
+          <Link href="/testimonials" className="hover:text-accent">
+            TESTIMONIALS
+          </Link>
         </div>
 
         <Link href="/contact" className="hidden md:block bg-primary text-text px-6 py-1 hover:bg-accent font-bold">
           Let's Talk
         </Link>
 
-        <div className="md:hidden flex gap-6 justify-between items-center text-[#fff] font-bold">
+        <div className="md:hidden flex gap-6 justify-between items-center text-[#fff] font-bold ">
           <button onClick={() => setMenuOpen((prev) => !prev)}>
             <MdMenu className="w-7 h-7" />
           </button>
@@ -46,21 +52,21 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="relative">
-          <nav className="h-[calc(100vh_-_4rem)] bg-background flex flex-col gap-6 text-white font-bold text-center justify-center items-center absolute top-[4  rem] h-screen w-full">
-            <Link href="/" className="shadow-[0_0_10px_1px_#fff] bg-[#002] w-40 py-2  hover:text-accent">
+        <div className="relative w-full bg-background translate-y-[1px]">
+          <nav className="h-[calc(100vh_-_4rem)] bg-background flex flex-col gap-6 text-white font-bold text-center justify-start pt-12 items-center absolute w-full">
+            <Link href="/" className="bg-primary w-full max-w-60 py-2 hover:bg-accent">
               HOME
             </Link>
-            <Link href="/" className="shadow-[0_0_10px_1px_#fff] bg-[#002] w-40 py-2  hover:text-accent">
+            <Link href="/" className="bg-primary w-full max-w-60 py-2 hover:bg-accent">
               ABOUT
             </Link>
-            <Link href="/" className="shadow-[0_0_10px_1px_#fff] bg-[#002] w-40 py-2  hover:text-accent">
+            <Link href="/" className="bg-primary w-full max-w-60 py-2 hover:bg-accent">
               CONTACT
             </Link>
-            <Link href="/" className="shadow-[0_0_10px_1px_#fff] bg-[#002] w-40 py-2  hover:text-accent">
+            <Link href="/" className="bg-primary w-full max-w-60 py-2 hover:bg-accent">
               PROJECTS
             </Link>
-            <Link href="/contact" className="bg-primary text-text px-6 py-1 hover:bg-accent font-bold">
+            <Link href="/contact" className="bg-primary text-text w-full max-w-60 py-2 hover:bg-accent font-bold">
               Let's Talk
             </Link>
             <SocialLinkBalls />

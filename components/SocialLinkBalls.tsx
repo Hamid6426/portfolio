@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SocialLinkBalls() {
   return (
-    <div className="flex items-center gap-x-3 max-md:justify-center">
+    <div className="flex items-center gap-x-6 max-md:justify-center">
       <a target="_blank" href="https://github.com/hamid6426">
         <div className="border p-3 rounded-full hover:border-accent hover:text-accent">
           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
