@@ -84,7 +84,7 @@ const AboutPage = () => {
     <main className="w-full max-w-6xl mx-auto pt-0 h-full md:h-[calc(100vh_-_4.04rem)]">
       <div className="flex py-12 gap-12 mx-3 md:mx-6 w-full">
         {/* Sidebar */}
-        <div className="w-full max-w-60 flex flex-col gap-4 flex-wrap">
+        <div className="w-full max-w-60 flex flex-col gap-4 text-sm flex-wrap">
           {Object.keys(sections).map((key) => (
             <button
               key={key}
