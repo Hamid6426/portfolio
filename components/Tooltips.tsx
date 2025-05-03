@@ -1,7 +1,7 @@
 // components/Tooltip.tsx
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 interface TooltipProps {
   message: string;
