@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import SocialLinkBalls from "./SocialLinkBalls";
-import { MdMenu } from "react-icons/md";
+import { MdMenu, MdClose } from "react-icons/md";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -15,64 +15,50 @@ export default function Navbar() {
   if (shouldHideNavbar) return null;
 
   return (
-    <header className="sticky top-0  w-full border-b border-primary ">
-      <nav className="mx-auto z-50 bg-background max-w-6xl w-full h-[4rem] flex justify-between items-center rounded-full text-text px-3 md:px-6">
-        <Link href="/" className="text-lg md:text-2xl font-bold">
+    <header className="sticky top-0 w-full border-b border-primary z-50">
+      <nav className="relative mx-auto bg-background max-w-5xl w-full h-12 lg:h-14 flex justify-between items-center rounded-full text-text px-6 xl:px-0">
+        <Link href="/" className="text-lg lg:text-xl font-bold">
           Mian Hamid Ur Rehman <span className="text-[#ff0044]">.</span>
         </Link>
 
-        <div className="hidden md:flex gap-6 text-sm font-bold">
-          <Link href="/" className="hover:text-accent">
-            HOME
-          </Link>
-          <Link href="/about" className="hover:text-accent">
-            ABOUT
-          </Link>
-          <Link href="/projects" className="hover:text-accent">
-            PROJECTS
-          </Link>
-          <Link href="/services" className="hover:text-accent">
-            SERVICES
-          </Link>
-          <Link href="/testimonials" className="hover:text-accent">
-            TESTIMONIALS
-          </Link>
+        <div className="hidden lg:flex gap-4 lg:gap-6 text-sm font-bold">
+          <Link href="/" className="hover:text-accent">Home</Link>
+          <Link href="/about" className="hover:text-accent">About</Link>
+          <Link href="/contact" className="hover:text-accent">Contact</Link>
+          <Link href="/projects" className="hover:text-accent">Projects</Link>
+          <Link href="/services" className="hover:text-accent">Services</Link>
+          <Link href="/testimonials" className="hover:text-accent">Testimonials</Link>
         </div>
 
-        <Link href="/contact" className="hidden md:block bg-primary text-text px-6 py-1 hover:bg-accent font-bold">
+        <Link href="/contact" className="hidden lg:block bg-primary text-text px-4 py-1 hover:bg-accent font-bold">
           Let's Talk
         </Link>
 
-        <div className="md:hidden flex gap-6 justify-between items-center text-[#fff] font-bold ">
+        <div className="lg:hidden flex gap-6 justify-between items-center text-[#fff] font-bold">
           <button onClick={() => setMenuOpen((prev) => !prev)}>
-            <MdMenu className="w-7 h-7" />
+            {menuOpen ? <MdClose className="cursor-pointer w-7 h-7" /> : <MdMenu className="cursor-pointer w-7 h-7" />}
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="relative w-full bg-background translate-y-[1px]">
-          <nav className="h-[calc(100vh_-_4rem)] bg-background flex flex-col gap-6 text-white font-bold text-center justify-start pt-12 items-center absolute w-full">
-            <Link href="/" className="bg-primary w-full max-w-60 py-2 hover:bg-accent">
-              HOME
-            </Link>
-            <Link href="/" className="bg-primary w-full max-w-60 py-2 hover:bg-accent">
-              ABOUT
-            </Link>
-            <Link href="/" className="bg-primary w-full max-w-60 py-2 hover:bg-accent">
-              CONTACT
-            </Link>
-            <Link href="/" className="bg-primary w-full max-w-60 py-2 hover:bg-accent">
-              PROJECTS
-            </Link>
-            <Link href="/contact" className="bg-primary text-text w-full max-w-60 py-2 hover:bg-accent font-bold">
-              Let's Talk
-            </Link>
-            <SocialLinkBalls />
-          </nav>
-        </div>
-      )}
+      <div
+        className={`lg:hidden bg-background border-primary border-l border-b border-t py-3 px-4 max-w-40 w-full absolute text-sm top-12 right-0 text-center shadow-md transition-all duration-300 ease-in-out ${
+          menuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
+      >
+        <nav className="flex flex-col gap-3 text-white font-bold text-center text-xs items-center w-full">
+          <Link href="/" className="bg-primary w-full py-2 hover:bg-accent">Home</Link>
+          <Link href="/about" className="bg-primary w-full py-2 hover:bg-accent">About</Link>
+          <Link href="/contact" className="bg-primary w-full py-2 hover:bg-accent">Contact</Link>
+          <Link href="/projects" className="bg-primary w-full py-2 hover:bg-accent">Projects</Link>
+          <Link href="/services" className="bg-primary w-full py-2 hover:bg-accent">Services</Link>
+          <Link href="/testimonials" className="bg-primary w-full py-2 hover:bg-accent">Testimonials</Link>
+          <Link href="/contact" className="bg-primary text-text w-full py-2 hover:bg-accent font-bold">
+            Let's Talk
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 }

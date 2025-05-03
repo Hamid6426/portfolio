@@ -15,14 +15,14 @@ const sections = {
         <p class="">I’m passionate about clean code, good UI, and efficient backend design.</p>
         <h2 class="text-2xl font-semibold my-4 text-primary">Interests</h2>
         <div class="flex flex-wrap gap-6">
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">Programming</button>
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">Building Softwares</button>
+          <button class="px-4 py-2 font-semibold bg-primary hover:bg-accent">Programming</button>
+          <button class="px-4 py-2 font-semibold bg-primary hover:bg-accent">Building Softwares</button>
         </div>
         <h2 class="text-2xl font-semibold my-4 text-primary">Languages</h2>
         <div class="flex flex-wrap gap-6">
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">English</button>
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">Urdu</button>
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">Pashto</button>
+          <button class="px-4 py-2 font-semibold bg-primary hover:bg-accent">English</button>
+          <button class="px-4 py-2 font-semibold bg-primary hover:bg-accent">Urdu</button>
+          <button class="px-4 py-2 font-semibold bg-primary hover:bg-accent">Pashto</button>
         </div>
       `,
   },
@@ -81,7 +81,7 @@ const AboutPage = () => {
   const [active, setActive] = useState<keyof typeof sections>("about");
 
   return (
-    <main className="w-full max-w-6xl mx-auto pt-0 h-full md:h-[calc(100vh_-_4.04rem)]">
+    <main className="w-full max-w-6xl mx-auto pt-0 h-full md:h-[calc(100vh_-_4.4rem)]">
       <div className="flex py-12 gap-12 mx-3 md:mx-6 w-full">
         {/* Sidebar */}
         <div className="w-full max-w-60 flex flex-col gap-4 text-sm flex-wrap">
@@ -89,7 +89,7 @@ const AboutPage = () => {
             <button
               key={key}
               onClick={() => setActive(key as keyof typeof sections)}
-              className={` w-full max-w-60 text-left py-2 cursor-pointer px-6 font-bold text-text ${active === key ? "bg-primary" : "hover:bg-accent bg-secondary"}`}
+              className={` w-full max-w-60 text-left py-2 cursor-pointer px-6 font-bold text-text ${active === key ? "bg-primary" : "hover:bg-accent bg-[#000a1a]"}`}
             >
               {sections[key as keyof typeof sections].title}
             </button>
@@ -99,7 +99,7 @@ const AboutPage = () => {
         {/* Content */}
         <div className="flex flex-col w-full">
           <h2 className="text-3xl font-semibold mb-4 text-primary">{sections[active].title}</h2>
-          <div className="prose prose-blue max-w-none border border-white p-4 text-text" dangerouslySetInnerHTML={{ __html: sections[active].content }} />
+          <div className="prose prose-blue max-w-none border border-primary p-4 text-text" dangerouslySetInnerHTML={{ __html: sections[active].content }} />
         </div>
       </div>
     </main>

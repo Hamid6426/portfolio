@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <main className="w-full max-w-6xl mx-auto pt-0 h-full md:h-[calc(100vh_-_4.04rem)]">
+    <main className="w-full max-w-6xl mx-auto pt-0 h-full md:h-[90vh]">
       <div className="flex h-full flex-col-reverse md:flex-row justify-center md:justify-start">
         <section className="w-full md:w-7/12 flex flex-col justify-center item-center text-text h-full pl-3 md:pl-6 text-sm">
           <div className="text-xl md:text-2xl font-bold">FULL STACK DEVELOPER</div>

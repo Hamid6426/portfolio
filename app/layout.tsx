@@ -31,10 +31,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased w-full`}>
         <AuthProvider>
-          <ToastContainer position="top-center" autoClose={2000} />
+          <ToastContainer position="bottom-right" autoClose={2000} />
           <main className="bg-background min-h-screen flex flex-col items-center w-full">
+            <section className="h-[10vh] w-full">
             <Navbar />
-            <section className="w-full h-full">{children}</section>
+            </section>
+            <section className="w-full min-h-[90vh]">{children}</section>
           </main>
         </AuthProvider>
       </body>
