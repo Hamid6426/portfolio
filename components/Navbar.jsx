@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import SocialLinkBalls from "./SocialLinkBalls";
 import { MdMenu, MdClose } from "react-icons/md";
 import { useState } from "react";
 import ThemeSwitch from "./ThemeSwitch";
@@ -49,12 +48,12 @@ export default function Navbar() {
           <ThemeSwitch />
           <Link
             href="/contact"
-            className="hidden lg:block bg-primary text-text px-4 py-1 hover:bg-accent font-bold"
+            className="hidden lg:block bg-primary px-4 py-1 hover:bg-accent text-white font-bold"
           >
             Let's Talk
           </Link>
 
-          <div className="lg:hidden flex gap-6 justify-between items-center text-[#fff] font-bold">
+          <div className="lg:hidden flex gap-6 justify-between items-center text-primary font-bold">
             <button onClick={() => setMenuOpen((prev) => !prev)}>
               {menuOpen ? (
                 <MdClose className="cursor-pointer w-7 h-7" />
@@ -110,7 +109,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/contact"
-            className="bg-primary text-text w-full py-2 hover:bg-accent font-bold"
+            className="bg-primary w-full py-2 hover:bg-accent font-bold"
           >
             Let's Talk
           </Link>

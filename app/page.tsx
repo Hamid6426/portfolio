@@ -1,6 +1,6 @@
 "use client";
 
-import SocialLinkBalls from "@/components/SocialLinkBalls";
+import SocialLinks from "@/components/SocialLinks";
 import ResumeModal from "@/components/ResumeModal";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -36,7 +36,7 @@ export default function Home() {
             and back-end as well as creating user interfaces with Figma for efficient and user-centered web applications and deliver seamless experience across multiple devices
           </div>
           <div className="flex flex-wrap gap-6 mt-6">
-            <SocialLinkBalls />
+            <SocialLinks />
           </div>
           <div className="flex flex-col md:flex-row gap-3 md:gap-6 mt-6 pr-3 md:pr-0 w-full my-8 md:mb-0">
             <button onClick={() => handleNavigate("work")} className="max-w-60 cursor-pointer bg-primary font-semibold text-white px-4 py-2 hover:bg-accent">

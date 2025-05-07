@@ -21,7 +21,7 @@ const ThemeSwitch: React.FC = () => {
   };
 
   return (
-    <button onClick={toggleTheme} className="text-primary">
+    <button onClick={toggleTheme} className="text-primary cursor-pointer">
       {theme === "light" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
     </button>
   );
