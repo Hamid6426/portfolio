@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { MdMenu, MdClose } from "react-icons/md";
 import { useState } from "react";
-import ThemeSwitch from "./ThemeSwitch";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,8 +16,8 @@ export default function Navbar() {
   if (shouldHideNavbar) return null;
 
   return (
-    <header className="sticky top-0 w-full border-b border-primary z-50  bg-[#FFFFFF] dark:bg-[#000011] ">
-      <nav className="relative mx-auto text-[#000000] dark:text-[#FFFFFF] max-w-7xl w-full h-14 flex justify-between items-center px-3 2xl:px-0">
+    <header className="fixed top-0 w-full border-b border-primary z-50  bg-background ">
+      <nav className="relative mx-auto text-text max-w-7xl w-full h-14 flex justify-between items-center px-3 2xl:px-0">
         <Link href="/" className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold">
           Mian Hamid <span className="hidden sm:inline">Ur Rehman </span><span className="text-[#ff0044]">.</span>
         </Link>
@@ -45,7 +44,6 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3 md:gap-4 lg:gap-5 xl:gap-6">
-          <ThemeSwitch />
           <Link
             href="/contact"
             className="hidden lg:block bg-primary px-4 py-1 hover:bg-accent text-white font-bold"

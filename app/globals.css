@@ -29,19 +29,9 @@
   /* Light Color Palette */
   --color-primary: #FF0044;
   --color-accent: #FF0066;
-  --color-background: #FFFFFF;
-  --color-text: #000000;
+  --color-background: #000011;
+  --color-text: #FFFFFF;
 }
-
-@layer base {
-  [data-theme='dark'] {
-    --color-primary: #FF0044;
-    --color-accent: #FF0066;
-    --color-background: #000011;
-    --color-text: #FFFFFF;
-  }
-}
-
 
 .desktop-wave-animation {
   animation: desktopWaveAnimation 12s linear infinite;

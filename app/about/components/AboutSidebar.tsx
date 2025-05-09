@@ -8,7 +8,7 @@ interface AboutSidebarProps {
 
 const AboutSidebar: React.FC<AboutSidebarProps> = ({ active, setActive }) => {
   return (
-    <div className="w-full max-w-60 flex flex-col gap-4 text-sm flex-wrap">
+    <div className="w-full max-w-40 flex flex-col gap-4 text-sm flex-wrap">
       {Object.keys(sectionsData).map((key) => (
         <button
           key={key}

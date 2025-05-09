@@ -36,16 +36,14 @@ export default function Home() {
             MIAN HAMID UR REHMAN
           </div>
           <div className="leading-relaxed pr-3 md:pr-0 md:max-w-[30rem]">
-            My name is Mian Hamid Ur Rehman from Nowshera, Pakistan. A
-            Full-Stack Web Developer specializing in React framework with MERN
-            Stack, and Next.js Architecture. Proficient in both front-end and
-            back-end as well as creating user interfaces with Figma for
-            efficient and user-centered web applications and deliver seamless
-            experience across multiple devices
+            I'm a Full Stack Developer with experience in building dynamic,
+            scalable web applications from end to end. I specialize in crafting
+            responsive UI and developing robust backend systems, with a focus on
+            clean code, performance, and seamless UX. Passionate about
+            problem-solving and continuously improving both my skills and the
+            products I work on.
           </div>
-          <div className="flex flex-wrap gap-6 mt-6">
-            <SocialLinks />
-          </div>
+ 
           <div className="flex flex-col md:flex-row gap-3 md:gap-6 mt-6 pr-3 md:pr-0 w-full my-8 md:mb-0">
             <button
               onClick={() => handleNavigate("work")}
