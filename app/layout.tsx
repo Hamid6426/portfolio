@@ -19,7 +19,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Hamid Portfolio",
-  description: "Mian Hamid Ur Rehman - Full Stack Developer portfolio created with Next.js",
+  description:
+    "Mian Hamid Ur Rehman - Full Stack Developer portfolio created with Next.js",
 };
 
 export default function RootLayout({
@@ -29,14 +30,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased w-full`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full`}
+      >
         <AuthProvider>
           <ToastContainer position="bottom-right" autoClose={2000} />
-          <main className="bg-background min-h-screen flex flex-col items-center w-full">
-            <section className="h-[10vh] w-full">
+          <main className="h-fit md:h-screen flex flex-col items-center w-full text-[#000000] dark:text-[#FFFFFF] bg-[#FFFFFF] dark:bg-[#000011]">
             <Navbar />
+            <section className="w-full h-full">
+              {children}
             </section>
-            <section className="w-full min-h-[90vh]">{children}</section>
           </main>
         </AuthProvider>
       </body>

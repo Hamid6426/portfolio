@@ -25,6 +25,7 @@
   /* Shadow Token */
   --shadow-soft: 0 2px 8px #bbb;
 
+  /* primary: #FF0044, accent: #FF0066, background: #FFFFFF or #0000w11 for dark mode, and Text: #000000 and #FFFFFF for dark */
   /* Light Color Palette */
   --color-primary: #FF0044;
   --color-accent: #FF0066;

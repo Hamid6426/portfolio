@@ -17,8 +17,8 @@ export default function Navbar() {
   if (shouldHideNavbar) return null;
 
   return (
-    <header className="sticky top-0 w-full border-b border-primary z-50">
-      <nav className="relative mx-auto bg-background max-w-7xl w-full h-14 flex justify-between items-center rounded-full text-text px-3 2xl:px-0">
+    <header className="sticky top-0 w-full border-b border-primary z-50  bg-[#FFFFFF] dark:bg-[#000011] ">
+      <nav className="relative mx-auto text-[#000000] dark:text-[#FFFFFF] max-w-7xl w-full h-14 flex justify-between items-center px-3 2xl:px-0">
         <Link href="/" className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold">
           Mian Hamid <span className="hidden sm:inline">Ur Rehman </span><span className="text-[#ff0044]">.</span>
         </Link>

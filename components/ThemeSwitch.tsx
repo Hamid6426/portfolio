@@ -1,28 +1,42 @@
-import React, { useEffect, useState } from "react";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { useEffect, useState } from "react";
+import { MdLightMode, MdDarkMode } from "react-icons/md";
 
-type Theme = "light" | "dark";
+type ThemeMode = "Light" | "Dark";
 
-const ThemeSwitch: React.FC = () => {
-  const [theme, setTheme] = useState<Theme>("light");
+const ThemeSwitch = () => {
+  const [theme, setTheme] = useState<ThemeMode>("Light");
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
-    const initialTheme = savedTheme === "dark" ? "dark" : "light";
-    setTheme(initialTheme);
-    document.documentElement.setAttribute("data-theme", initialTheme);
-  }, []);
+  const applyTheme = (mode: ThemeMode) => {
+    document.documentElement.classList.toggle("dark", mode === "Dark");
+  };
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
+    const nextTheme: ThemeMode = theme === "Dark" ? "Light" : "Dark";
+    setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    applyTheme(nextTheme);
   };
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme") as ThemeMode | null;
+
+    const initial: ThemeMode =
+      saved === "Dark" || saved === "Light"
+        ? saved
+        : window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "Dark"
+        : "Light";
+
+    setTheme(initial);
+    localStorage.setItem("theme", initial); // Persist first-time decision
+    applyTheme(initial);
+  }, []);
+
+  const icon = theme === "Dark" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />;
 
   return (
     <button onClick={toggleTheme} className="text-primary cursor-pointer">
-      {theme === "light" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
+      {icon}
     </button>
   );
 };
