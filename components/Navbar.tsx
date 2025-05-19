@@ -16,13 +16,25 @@ export default function Navbar() {
   if (shouldHideNavbar) return null;
 
   return (
-    <header className="fixed top-0 w-full border-b border-primary z-50  bg-background ">
-      <nav className="relative mx-auto text-text max-w-7xl w-full h-14 flex justify-between items-center px-3 2xl:px-0">
-        <Link href="/" className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold">
-          Mian Hamid <span className="hidden sm:inline">Ur Rehman </span><span className="text-[#ff0044]">.</span>
+    <header className="fixed top-0 w-full z-50 border-b border-primary bg-background text-paragraph">
+      <nav className="relative mx-auto max-w-7xl w-full h-10 flex justify-between items-center px-3 2xl:px-0">
+        {/* Logo */}
+        <Link href="/" className="text-lg font-extrabold">
+          <h1
+            className="tracking-tight leading-tight"
+            style={{
+              animation:
+                "pulseGlowFrost 5s infinite cubic-bezier(0.4, 0, 0.6, 1)",
+              display: "inline-block",
+              willChange: "transform, color, text-shadow",
+            }}
+          >
+            MIAN HAMID <span className="text-nowrap">UR REHMAN</span>
+          </h1>
         </Link>
 
-        <div className="hidden lg:flex gap-3 lg:gap-5 xl:gap-6 text-sm font-bold">
+        {/* Desktop Nav */}
+        <div className="hidden lg:flex items-center gap-3 lg:gap-5 xl:gap-6 text-xs font-bold">
           <Link href="/" className="hover:text-accent">
             Home
           </Link>
@@ -35,32 +47,31 @@ export default function Navbar() {
           <Link href="/projects" className="hover:text-accent">
             Projects
           </Link>
-          <Link href="/services" className="hover:text-accent">
+          {/* <Link href="/services" className="hover:text-accent">
             Services
-          </Link>
+          </Link> */}
           <Link href="/testimonials" className="hover:text-accent">
             Testimonials
           </Link>
-        </div>
-
-        <div className="flex items-center gap-3 md:gap-4 lg:gap-5 xl:gap-6">
           <Link
             href="/contact"
-            className="hidden lg:block bg-primary px-4 py-1 hover:bg-accent text-white font-bold"
+            className="hidden lg:block bg-primary px-3 py-1 text-xs hover:bg-accent text-white font-bold"
           >
             Let's Talk
           </Link>
-
-          <div className="lg:hidden flex gap-6 justify-between items-center text-primary font-bold">
-            <button onClick={() => setMenuOpen((prev) => !prev)}>
-              {menuOpen ? (
-                <MdClose className="cursor-pointer w-7 h-7" />
-              ) : (
-                <MdMenu className="cursor-pointer w-7 h-7" />
-              )}
-            </button>
-          </div>
         </div>
+
+        {/* Menu Button (Mobile) */}
+        <button
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="lg:hidden"
+        >
+          {menuOpen ? (
+            <MdClose className="w-7 h-7 text-primary" />
+          ) : (
+            <MdMenu className="w-7 h-7 text-primary" />
+          )}
+        </button>
       </nav>
 
       {/* Mobile Menu */}
@@ -71,7 +82,7 @@ export default function Navbar() {
             : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
-        <nav className="flex flex-col gap-3 text-white font-bold text-center text-xs items-center w-full">
+        <nav className="flex flex-col gap-3 font-bold text-xs items-center w-full text-white">
           <Link href="/" className="bg-primary w-full py-2 hover:bg-accent">
             Home
           </Link>
@@ -93,12 +104,12 @@ export default function Navbar() {
           >
             Projects
           </Link>
-          <Link
+          {/* <Link
             href="/services"
             className="bg-primary w-full py-2 hover:bg-accent"
           >
             Services
-          </Link>
+          </Link> */}
           <Link
             href="/testimonials"
             className="bg-primary w-full py-2 hover:bg-accent"

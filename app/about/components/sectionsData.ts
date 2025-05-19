@@ -1,74 +1,249 @@
 export const sectionsData = {
   about: {
     title: "About",
-    content: `
-        <p class="mb-4">
-          My name is Mian Hamid Ur Rehman from Nowshera, Pakistan. 
-          A Full-Stack Web Developer specializing in React framework with MERN Stack, and Next.js Architecture. 
-          Proficient in both front-end and back-end as well as creating user interfaces with Figma for efficient and user-centered web applications
-          and deliver seamless experience across multiple devices
-        </p>
-        <p class="">I’m passionate about clean code, good UI, and efficient backend design.</p>
-        <h2 class="text-2xl font-semibold my-4 text-primary">Interests</h2>
-        <div class="flex flex-wrap gap-6 text-white">
-          <button class="px-4 py-2 font-semibold bg-primary hover:bg-accent">Programming</button>
-          <button class="px-4 py-2 font-semibold bg-primary hover:bg-accent">Building Softwares</button>
-        </div>
-        <h2 class="text-2xl font-semibold my-4 text-primary">Languages</h2>
-        <div class="flex flex-wrap gap-6 text-white">
-          <button class="px-4 py-2 font-semibold bg-primary hover:bg-accent">English</button>
-          <button class="px-4 py-2 font-semibold bg-primary hover:bg-accent">Urdu</button>
-          <button class="px-4 py-2 font-semibold bg-primary hover:bg-accent">Pashto</button>
-        </div>
-      `,
+    paragraphs: [
+      "I’m Mian Hamid Ur Rehman from Nowshera KPK Pakistan. A Full-Stack Developer specializing in MERN stack and Next.js.",
+      "I build clean, scalable full-stack apps with a passion for performance and pixel-perfect UIs. From APIs to animations, my focus is seamless UX and maintainable code.",
+    ],
+    interests: ["Software Development"],
+    languages: ["English", "Urdu", "Pashto"],
   },
+
   experience: {
     title: "Experience",
-    content: `
-        <h2 class="text-2xl font-semibold my-4 text-primary">Professional Experience</h2>
-        <ul class="list-disc ml-6 space-y-2 text-text">
-          <li>3+ years building web apps with modern stacks</li>
-          <li>Worked with JavaScript, TypeScript, Node.js, Tailwind, and more</li>
-          <li>Experience with API design, authentication, deployment (Vercel, Netlify)</li>
-        </ul>
-      `,
+    jobs: [
+      {
+        role: "Backend Developer",
+        company: "BixForge Solutions",
+        duration: "Mar 2024 – Present",
+        type: "Part-time Internship",
+        location: "Remote",
+        responsibilities: [
+          "Built secure backends with authentication and RESTful APIs.",
+          "Collaborated remotely with devs, designers, cybersecurity, and marketing teams.",
+          "Built a item donation platform utilized by someone who want to donate used stuff.",
+        ],
+        techStack: ["Node.js", "Express.js", "MongoDB", "REST APIs"],
+      },
+      {
+        role: "Web Designer & Developer",
+        company: "CSS Edge",
+        duration: "Dec 2024 – Feb 2025",
+        type: "Part-time Job",
+        location: "Remote",
+        responsibilities: [
+          "Designed responsive UIs using Figma for all screen sizes.",
+          "Developed full-stack apps with authentication & payment systems.",
+          "Worked with AI & dev teams to ensure smooth delivery.",
+        ],
+        techStack: ["Figma", "Full-Stack", "Next.js", "Stripe"],
+      },
+      {
+        role: "Full Stack Developer",
+        company: "Vocsena",
+        duration: "Jul 2024 – Jan 2025",
+        type: "Part-time Internship",
+        location: "Remote",
+        responsibilities: [
+          "Built responsive UIs with React and Tailwind CSS.",
+          "Developed backend features using Express.js and REST APIs.",
+          "Contributed to team goals in a remote agile environment.",
+        ],
+        techStack: ["React", "Tailwind CSS", "Express.js", "REST APIs"],
+      },
+      {
+        role: "Career Prep Fellow",
+        company: "Amal Academy",
+        duration: "Aug 2022 – Oct 2022",
+        type: "On-site",
+        location: "UET Peshawar",
+        responsibilities: [
+          "Selected from 6500+ applicants for Stanford-funded program.",
+          "Completed 150+ hours of training in communication & leadership.",
+        ],
+        techStack: ["Leadership", "Communication", "Soft Skills"],
+      },
+    ],
   },
+
   education: {
     title: "Education",
-    content: `
-        <h2 class="text-2xl font-semibold my-4 text-primary">Academic Background</h2>
-        <ul class="list-disc ml-6 space-y-2 text-text">
-          <li>Bachelor's in Computer Science - Virtual University of Pakistan</li>
-          <li>Coursework in Web Development, Data Structures, and Cloud Deployment</li>
-          <li>Continued self-learning via online platforms (YouTube, Coursera, etc.)</li>
-        </ul>
-      `,
+    items: [
+      {
+        degree: "Bachelors of Sience Mechanical Engineering",
+        institution: "University of Engineering & Technology, Peshawar",
+        graduation: "12/2024",
+      },
+      {
+        degree: "Higher Secondary School Certificate Pre-Engineering",
+        institution: "The Peace School & College, Hakimabad Nowshera",
+        graduation: "06/2019",
+      },
+      {
+        degree: "Secondary School Certificate Science",
+        institution: "Jamal English Education Academy, Pabbi Nowshera",
+        graduation: "04/2017",
+      },
+    ],
   },
+
+  certifications: {
+    title: "Certifications",
+    list: {
+      "Quality Assurance Certification": {
+        institution: "freeCodeCamp.org",
+        completionDate: "Feb 2025",
+        skills: ["Testing", "Chai", "Node.js", "Express.js", "MongoDB"],
+      },
+      "Backend Development And API Certification": {
+        institution: "freeCodeCamp.org",
+        completionDate: "July 2024",
+        skills: ["Node.js", "Express.js", "MongoDB"],
+      },
+      "Relational Database Certification": {
+        institution: "freeCodeCamp.org",
+        completionDate: "July 2024",
+        skills: ["PostgreSQL", "Bash"],
+      },
+      "Front End Libraries Certification": {
+        institution: "freeCodeCamp.org",
+        completionDate: "June 2024",
+        skills: ["Bootstrap", "SASS", "jQuery", "React", "Redux"],
+      },
+      "Javascript Algorithm and Data Structures Certification": {
+        institution: "freeCodeCamp.org",
+        completionDate: "May 2024",
+        skills: [
+          "JavaScript Basics",
+          "Data Structures",
+          "Algorithms",
+          "Functional Programming",
+          "Object-Oriented Programming",
+          "Fetch API",
+          "Async",
+        ],
+      },
+      "Responsive Web Design Certification": {
+        institution: "freeCodeCamp.org",
+        completionDate: "March 2024",
+        skills: ["HTML", "CSS", "Responsive Design"],
+      },
+      "Google UX Design Professional Certification": {
+        institution: "Google (Coursera.org)",
+        completionDate: "April 2024",
+        skills: [
+          "Empathy",
+          "User Research",
+          "Wireframing",
+          "Visual Design",
+          "Figma",
+        ],
+      },
+      "IBM Front-End Developer Professional Certification": {
+        institution: "IBM (Coursera.org)",
+        completionDate: "Feb 2024",
+        skills: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Bootstrap",
+          "React",
+          "Figma",
+          "WordPress",
+          "SEO",
+        ],
+      },
+    },
+  },
+
   skills: {
     title: "Skills",
-    content: `
-        <h2 class="text-2xl font-semibold my-4 text-primary">Tech Stack</h2>
-        <div class="flex flex-wrap gap-4">
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">JavaScript</button>
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">TypeScript</button>
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">React</button>
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">Next.js</button>
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">Node.js</button>
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">MongoDB</button>
-          <button class="px-3 py-1 font-bold bg-primary hover:bg-accent">Tailwind CSS</button>
-        </div>
-      `,
+    categorized: {
+      Frontend: [
+        "HTML",
+        "CSS",
+        "SASS",
+        "Tailwind CSS",
+        "Bootstrap",
+        "ShadCN",
+        "MUI",
+        "React",
+        "Next.js",
+        "jQuery",
+        "GSAP",
+        "Three.js",
+        "Framer Motion",
+        "Redux Toolkit",
+        "React Query",
+        "Angular (Basic)",
+      ],
+      Backend: [
+        "Node.js",
+        "Express.js",
+        "Nest.js (Basic)",
+        "FastAPI (Basic)",
+
+        "REST APIs",
+        "WebSocket",
+
+        "Postman",
+        "Thunder Client",
+
+        "Third-Party API Integration",
+        "Gen-AI Integration",
+
+        "MVC Architecture",
+        "Microservices Architecture",
+      ],
+      Databases: [
+        "MongoDB",
+        "Mongoose",
+        "MySQL",
+        "PostgreSQL",
+        "Supabase",
+        "Neon Serverless DB",
+        "Firebase",
+        "Prisma",
+        "Sequelize",
+        "TypeORM",
+      ],
+      "Programming Languages": [
+        "JavaScript",
+        "TypeScript",
+        "Python (Basic)",
+        "PHP (Basic)",
+        "SQL",
+      ],
+      "Soft Skills": [
+        "Problem Solving",
+        "Critical Thinking",
+        "Fast Comprehension",
+        "Communication",
+        "Adaptability",
+        "Empathy",
+      ],
+      "Dev Tools": [
+        "VS Code",
+        "Git",
+        "GitHub",
+        "Bash",
+        "Linux",
+        "Docker",
+        "VMs",
+        "WordPress",
+        "Webflow",
+      ],
+      "UI/UX Tools": ["Figma", "Adobe XD", "Canva"],
+    },
   },
+
   vision: {
     title: "Vision",
-    content: `
-        <h2 class="text-2xl font-semibold my-4 text-primary">Future Goals</h2>
-        <p class="mb-4 text-text">My vision is to become a solution-driven software architect who bridges the gap between design and development using scalable systems and seamless UI/UX practices.</p>
-        <ul class="list-disc ml-6 space-y-2 text-text">
-          <li>Build sustainable web applications for underrepresented communities</li>
-          <li>Lead engineering teams and mentor juniors</li>
-          <li>Contribute to open-source tools and platforms</li>
-        </ul>
-      `,
+    goalStatement: `I want to grow as a software developer who builds useful and reliable software - "NOT limited to just websites". I want to work with different kinds of technology, like mobile apps, cloud, and AI, and collabrate with other developers to create great products.`,
+    goals: [
+      "Build software that works well on different devices and platforms.",
+      "Learn and use new technologies like Machine learning and cloud computing.",
+      "Share knowledge and contribute to open-source projects.",
+    ],
   },
 };

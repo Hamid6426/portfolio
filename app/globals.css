@@ -1,37 +1,63 @@
 @import "tailwindcss";
 
 @theme {
-  /* 256px very small phones rarely used */
-  --breakpoint-xs: 16rem;
-  /* 512px small phones */
-  --breakpoint-sm: 32rem;
-  /* 768px large phones */
+  --breakpoint-3xs: 16rem;
+  --breakpoint-2xs: 24rem;
+  --breakpoint-xs: 32rem;
+  --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
-  /* 1024px tablet */
   --breakpoint-lg: 64rem;
-  /* 1280px laptop */
   --breakpoint-xl: 80rem;
-  /* 1536px */
   --breakpoint-2xl: 96rem;
-  /* 1792px */
   --breakpoint-3xl: 112rem;
-  /* 2048px */
   --breakpoint-4xl: 128rem;
-  /* 2304px */
-  --breakpoint-5xl: 154rem;
-  /* 2560px MAX */
+  --breakpoint-5xl: 144rem;
   --breakpoint-6xl: 160rem;
 
-  /* Shadow Token */
-  --shadow-soft: 0 2px 8px #bbb;
+  --color-primary: #3366cc;
+  /* True cool blue, bold and stable */
+  --color-secondary: #6699cc;
+  /* Muted sky blue, calming */
+  --color-accent: #3f87ff;
+  /* Brighter blue for emphasis, not cyan */
+  --color-heading: #dfefff;
+  /* Very light blue for headings */
+  --color-paragraph: #f0f4ff;
+  /* Off-white with a blue tint */
+  --color-muted: #94a9c9;
+  /* Muted steely blue for hints/labels */
+  --color-background: #000018;
+  /* Deep, cold base */
+  --color-card: #0b1e3c;
+  /* Rich navy-blue card bg */
+  --color-border: #1c2a45;
+  /* Soft steel-blue for borders */
 
-  /* primary: #FF0044, accent: #FF0066, background: #FFFFFF or #0000w11 for dark mode, and Text: #000000 and #FFFFFF for dark */
-  /* Light Color Palette */
-  --color-primary: #FF0044;
-  --color-accent: #FF0066;
-  --color-background: #000011;
-  --color-text: #FFFFFF;
+  --color-primary-alpha: rgba(51, 102, 204, 0.6);
+
+
 }
+
+
+@keyframes pulseGlowFrost {
+
+  0%,
+  100% {
+    color: var(--color-primary);
+    text-shadow: 0 0 8px var(--color-primary-alpha);
+    transform: scale(1);
+  }
+
+  50% {
+    color: #e6f0ff;
+    /* Frosty near-white blue */
+    text-shadow: 0 0 20px rgba(230, 240, 255, 0.9);
+    /* Stronger white-blue glow */
+    transform: scale(1.03);
+  }
+}
+
+
 
 .desktop-wave-animation {
   animation: desktopWaveAnimation 12s linear infinite;

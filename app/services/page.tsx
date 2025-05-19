@@ -28,18 +28,32 @@ const services = [
 
 export default function Page() {
   return (
-    <main className="flex flex-col w-full mx-auto px-6 max-w-6xl py-8">
-      <h2 className="text-3xl font-semibold mb-8 text-primary">Services</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {services.map((service, index) => (
-          <Link key={index} href="/contact" className="py-4 px-6 border border-primary w-full h-fit lg:h-48 flex flex-col overflow-hidden hover:rounded-2xl transition-all delay-300">
-            <div className="flex justify-between w-full mb-4">
-              <h2 className="text-primary text-xl font-semibold">{service.title}</h2>
-              <MdArrowBack size={28} className="rotate-[140deg] text-primary" />
-            </div>
-            <p className="text-white text-sm lg:text-[0.94rem] overflow-hidden md:text-ellipsis md:line-clamp-6 lg:line-clamp-5">{service.description}</p>
-          </Link>
-        ))}
+    <main className="flex flex-col w-full px-6 py-16 bg-background text-paragraph">
+      <div className="mx-auto max-w-5xl">
+        <h2 className="text-3xl font-bold mb-6 text-primary">Services</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <Link
+              key={index}
+              href="/contact"
+              className="py-6 px-6 border border-border bg-card hover:border-primary hover:shadow-lg hover:shadow-primary-alpha transition-all rounded-xl"
+            >
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-semibold text-primary">
+                  {service.title}
+                </h3>
+                <MdArrowBack
+                  size={28}
+                  className="rotate-[140deg] text-primary"
+                />
+              </div>
+              <p className="text-paragraph text-sm lg:text-[0.94rem] line-clamp-6">
+                {service.description}
+              </p>
+            </Link>
+          ))}
+        </div>
       </div>
     </main>
   );

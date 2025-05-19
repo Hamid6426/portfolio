@@ -1,75 +1,132 @@
 "use client";
 
-import SocialLinks from "@/components/SocialLinks";
 import ResumeModal from "@/components/ResumeModal";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  const router = useRouter();
   const [resumeOpen, setResumeOpen] = useState(false);
+  const router = useRouter();
 
-  // Button click functions
   const handleNavigate = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+      section.focus({ preventScroll: true }); // add tabindex={-1} to target sections
     }
   };
 
-  const handleResumeDownload = () => {
-    // You can replace this URL with the actual path to your resume
-    const resumeLink = "/Mian_Hamid_Ur_Rehman_Resume.pdf";
-    window.open(resumeLink, "_blank");
+  const words = ["FULL", "STACK", "DEVELOPER"];
+
+  const wordAnimationVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.8 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { delay: i * 0.3, type: "spring", stiffness: 120 },
+    }),
   };
 
   return (
-    <main className="w-full max-w-6xl mx-auto pt-0 h-full md:h-[90vh] ">
-      <div className="flex h-full flex-col-reverse md:flex-row justify-center md:justify-start ">
-        <section className="w-full md:w-7/12 flex flex-col justify-center item-center h-full pl-3 md:pl-6 text-sm">
-          <div className="text-xl md:text-2xl font-bold">
-            FULL STACK DEVELOPER
-          </div>
-          <div className="text-2xl md:text-4xl font-bold my-2">Hello, I'm</div>
-          <div className="text-2xl md:text-4xl font-bold text-[#FF0044] mb-3">
-            MIAN HAMID UR REHMAN
-          </div>
-          <div className="leading-relaxed pr-3 md:pr-0 md:max-w-[30rem]">
-            I'm a Full Stack Developer with experience in building dynamic,
-            scalable web applications from end to end. I specialize in crafting
-            responsive UI and developing robust backend systems, with a focus on
-            clean code, performance, and seamless UX. Passionate about
-            problem-solving and continuously improving both my skills and the
-            products I work on.
-          </div>
- 
-          <div className="flex flex-col md:flex-row gap-3 md:gap-6 mt-6 pr-3 md:pr-0 w-full my-8 md:mb-0">
-            <button
-              onClick={() => handleNavigate("work")}
-              className="max-w-60 cursor-pointer bg-[#FF0044] font-semibold text-white px-4 py-2 hover:bg-[#FF0066]"
-            >
-              Check My Works
-            </button>
-            <button
-              onClick={() => setResumeOpen(true)}
-              className="max-w-60 cursor-pointer bg-[#FF0044] font-semibold text-white px-4 py-2 hover:bg-[#FF0066]"
-            >
-              Check My Resume
-            </button>
-          </div>
-        </section>
+    <main className="w-full lg:overflow-hidden px-4 min-h-screen bg-background text-paragraph selection:bg-primary/30 flex flex-col md:justify-center items-center py-16 md:pt-0">
+      <div className="w-full max-w-3xl mx-auto">
+        <motion.div
+          className="flex flex-col md:flex-row items-center gap-4 md:gap-10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Profile Image with subtle motion and glow */}
+          <motion.div
+            className="relative group"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            <div className="absolute -inset-1 rounded-full blur-lg opacity-30 group-hover:opacity-60 transition duration-500 bg-gradient-to-br from-primary via-secondary to-accent z-[-1]" />
+            <Image
+              src="/hamid-profile.png"
+              alt="Hamid Profile"
+              width={500}
+              height={500}
+              className="w-48 h-48 md:w-60 md:h-60 rounded-full border-4 border-primary object-cover shadow-xl group-hover:scale-105 transition-transform duration-500 ease-out"
+            />
+          </motion.div>
 
-        <section className="w-full md:w-5/12 flex justify-start md:justify-center items-center h-full pl-3 md:pr-6 md:ml-0 py-8 md:my-0">
-          <Image
-            src="/hamid-profile.png"
-            alt="profile picture"
-            width={500}
-            height={500}
-            className="w-40 md:w-80 rounded-full border-2 border-[#FF0044]"
-          />
-        </section>
+          {/* Profile Content */}
+          <motion.div
+            className="flex-1 text-center md:text-left space-y-6"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            <div>
+              <h1
+                className="text-2xl md:text-4xl max-w-lg font-extrabold tracking-tight leading-tight"
+                style={{
+                  animation:
+                    "pulseGlowFrost 5s infinite cubic-bezier(0.4, 0, 0.6, 1)",
+                  display: "inline-block",
+                  willChange: "transform, color, text-shadow",
+                }}
+              >
+                MIAN HAMID <span className="text-nowrap">UR REHMAN</span>
+              </h1>
+
+              <h2 className="text-xl md:text-3xl font-semibold mt-4">
+                {words.map((word, i) => (
+                  <motion.span
+                    key={word}
+                    custom={i}
+                    variants={wordAnimationVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className={`inline-block font-bold mr-3 ${
+                      word === "STACK" ? "text-heading" : "text-heading"
+                    }`}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </h2>
+            </div>
+
+            <p className="text-lg px:4 md:px-0 max-w-lg text-paragraph opacity-90 tracking-wide text-justify leading-relaxed mx-auto md:mx-0">
+              I build <span className="text-accent font-medium">clean</span>,{" "}
+              <span className="text-accent font-medium">scalable</span>{" "}
+              full-stack apps with a passion for{" "}
+              <span className="text-accent font-medium">performance</span> and{" "}
+              <span className="text-accent font-medium">pixel-perfect UIs</span>
+              . From APIs to animations, my focus is seamless UX and
+              maintainable code.
+            </p>
+
+            <div className="flex flex-col max-w-lg w-full md:flex-row items-center justify-center md:justify-start gap-4 text-sm">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => router.push("/projects")}
+                className="px-6 py-2 w-full max-w-xs bg-primary text-white font-semibold shadow-md hover:bg-secondary hover:shadow-xl transition-all duration-300 border-primary border-2"
+              >
+                View My Work
+              </motion.button>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setResumeOpen(true)}
+                className="px-6 py-2 w-full max-w-xs border-2 text-sm border-primary text-primary bg-transparent hover:bg-primary/10 transition-all font-semibold shadow-md hover:shadow-lg"
+              >
+                View Resume
+              </motion.button>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
+
       <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
     </main>
   );

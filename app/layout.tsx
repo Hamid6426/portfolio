@@ -34,11 +34,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-full`}
       >
         <ToastContainer position="bottom-right" autoClose={2000} />
-        <main className="h-fit md:h-screen flex flex-col items-center w-full text-text bg-background">
-          <Navbar />
-          <section className="w-full h-full pt-14 pb-8">{children}</section>
-          <Footer />
-        </main>
+        <Navbar />
+        <section className="w-full">
+          {children}
+        </section>
+        <Footer />
       </body>
     </html>
   );
