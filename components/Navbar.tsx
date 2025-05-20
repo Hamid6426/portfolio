@@ -41,9 +41,9 @@ export default function Navbar() {
           <Link href="/about" className="hover:text-accent">
             About
           </Link>
-          <Link href="/contact" className="hover:text-accent">
+          {/* <Link href="/contact" className="hover:text-accent">
             Contact
-          </Link>
+          </Link> */}
           <Link href="/projects" className="hover:text-accent">
             Projects
           </Link>
@@ -116,12 +116,12 @@ export default function Navbar() {
           >
             Testimonials
           </Link> */}
-          <Link
+          {/* <Link
             href="/contact"
             className="bg-primary w-full py-2 hover:bg-accent font-bold"
           >
             Let&apos;s Talk
-          </Link>
+          </Link> */}
         </nav>
       </div>
     </header>

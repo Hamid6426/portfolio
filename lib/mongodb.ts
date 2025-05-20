@@ -1,7 +1,7 @@
 // src/lib/mongodb.ts
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI!;
+const MONGO_URI = process.env.MONGO_URI!;
 
 let cached = global.mongoose;
 
@@ -16,7 +16,7 @@ async function connectToDatabase() {
 
   if (!cached.promise) {
     const options = { bufferCommands: false };
-    cached.promise = mongoose.connect(MONGODB_URI, options).then((mongoose) => mongoose);
+    cached.promise = mongoose.connect(MONGO_URI, options).then((mongoose) => mongoose);
   }
 
   try {
