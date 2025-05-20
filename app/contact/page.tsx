@@ -41,7 +41,7 @@ const ContactForm = () => {
           className="mx-auto w-2/3 px-3 space-y-6 text-paragraph"
         >
           <h2 className="text-3xl font-semibold mb-4 text-primary">
-            Let's work together
+            Let&apos;s work together
           </h2>
           <p>
             I would love to hear from you! Please fill out the form below with

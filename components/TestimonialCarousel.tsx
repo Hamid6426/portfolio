@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export type Testimonial = {
@@ -14,7 +15,9 @@ type TestimonialCarouselProps = {
   testimonials: Testimonial[];
 };
 
-const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials }) => {
+const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
+  testimonials,
+}) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   // Function to go to the next testimonial
@@ -24,7 +27,9 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials 
 
   // Function to go to the previous testimonial
   const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length); // Wrap around to the last
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    ); // Wrap around to the last
   };
 
   return (
@@ -34,10 +39,21 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials 
         <div className="text-center">
           {testimonials.length > 0 && (
             <div>
-              <img src={testimonials[currentIndex].imgSrc || "/images/default.jpg"} alt={testimonials[currentIndex].author} className="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-primary" />
-              <p className="text-xl font-semibold">{testimonials[currentIndex].author}</p>
-              <p className="text-lg font-semibold text-gray-500">{testimonials[currentIndex].role}</p>
-              <p className="mt-4 italic">"{testimonials[currentIndex].quote}"</p>
+              <Image
+                fill
+                src={testimonials[currentIndex].imgSrc || "/images/default.jpg"}
+                alt={testimonials[currentIndex].author}
+                className="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-primary"
+              />
+              <p className="text-xl font-semibold">
+                {testimonials[currentIndex].author}
+              </p>
+              <p className="text-lg font-semibold text-gray-500">
+                {testimonials[currentIndex].role}
+              </p>
+              <p className="mt-4 italic">
+                &quot;{testimonials[currentIndex].quote}&qout;
+              </p>
             </div>
           )}
         </div>
@@ -45,12 +61,18 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({ testimonials 
 
       {/* Navigation Buttons */}
       <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
-        <button onClick={prevTestimonial} className="bg-primary w-10 h-10 pb-1 pr-1 font-bold text-2xl rounded-full text-text cursor-pointer hover:bg-accent">
+        <button
+          onClick={prevTestimonial}
+          className="bg-primary w-10 h-10 pb-1 pr-1 font-bold text-2xl rounded-full text-text cursor-pointer hover:bg-accent"
+        >
           &lt;
         </button>
       </div>
       <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
-        <button onClick={nextTestimonial} className="bg-primary w-10 h-10 pb-1 pl-1 font-bold text-2xl rounded-full text-text cursor-pointer hover:bg-accent">
+        <button
+          onClick={nextTestimonial}
+          className="bg-primary w-10 h-10 pb-1 pl-1 font-bold text-2xl rounded-full text-text cursor-pointer hover:bg-accent"
+        >
           &gt;
         </button>
       </div>

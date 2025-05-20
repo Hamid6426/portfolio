@@ -50,14 +50,14 @@ export default function Navbar() {
           {/* <Link href="/services" className="hover:text-accent">
             Services
           </Link> */}
-          <Link href="/testimonials" className="hover:text-accent">
-            Testimonials
-          </Link>
+            {/* <Link href="/testimonials" className="hover:text-accent">
+              Testimonials
+            </Link> */}
           <Link
             href="/contact"
             className="hidden lg:block bg-primary px-3 py-1 text-xs hover:bg-accent text-white font-bold"
           >
-            Let's Talk
+            Let&apos;s Talk
           </Link>
         </div>
 
@@ -110,17 +110,17 @@ export default function Navbar() {
           >
             Services
           </Link> */}
-          <Link
+          {/* <Link
             href="/testimonials"
             className="bg-primary w-full py-2 hover:bg-accent"
           >
             Testimonials
-          </Link>
+          </Link> */}
           <Link
             href="/contact"
             className="bg-primary w-full py-2 hover:bg-accent font-bold"
           >
-            Let's Talk
+            Let&apos;s Talk
           </Link>
         </nav>
       </div>

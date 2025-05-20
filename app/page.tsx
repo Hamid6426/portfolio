@@ -10,13 +10,13 @@ export default function Home() {
   const [resumeOpen, setResumeOpen] = useState(false);
   const router = useRouter();
 
-  const handleNavigate = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      section.focus({ preventScroll: true }); // add tabindex={-1} to target sections
-    }
-  };
+  // const handleNavigate = (sectionId: string) => {
+  //   const section = document.getElementById(sectionId);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: "smooth" });
+  //     section.focus({ preventScroll: true }); // add tabindex={-1} to target sections
+  //   }
+  // };
 
   const words = ["FULL", "STACK", "DEVELOPER"];
 
