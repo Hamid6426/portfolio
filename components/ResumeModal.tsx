@@ -36,7 +36,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 Download - Light Version
               </a>
               <a
-                href="/Mian_Hamid_Ur_Rehman_Resume.pdf"
+                href="/Mian_Hamid_Ur_Rehman_CV.pdf"
                 download
                 className="bg-primary text-white py-2 px-4 rounded hover:bg-accent text-center"
               >
