@@ -16,7 +16,7 @@ export default function Navbar() {
   if (shouldHideNavbar) return null;
 
   return (
-    <header className="fixed top-0 w-full z-50 border-b border-primary bg-background text-paragraph">
+    <header className="fixed top-0 w-full z-60 border-b border-primary bg-background text-paragraph">
       <nav className="relative mx-auto max-w-7xl w-full h-10 flex justify-between items-center px-3 2xl:px-0">
         {/* Logo */}
         <Link href="/" className="text-lg font-extrabold">

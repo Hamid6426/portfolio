@@ -90,7 +90,7 @@ const myProjects: Project[] = [
       "A full-featured school management web app with modules for students, teachers, courses, results, and fee management. Built using Next.js, MongoDB and TailwindCSS with secure admin and staff dashboards.",
     imgSrc: "/project.png",
     github: "https://github.com/Hamid6426/school-management-system",
-    demo: "", 
+    demo: "",
   },
 ];
 
@@ -150,7 +150,7 @@ const ProjectCard = ({
     <p className="text-paragraph text-base text-left">{project.description}</p>
     <div className="flex gap-4">
       <motion.button
-        whileHover={{ x: 4 }}
+        whileHover={project.github ? { x: 4 } : {}}
         onClick={() =>
           project.github
             ? window.open(project.github, "_blank")
@@ -158,18 +158,23 @@ const ProjectCard = ({
                 "This project's GitHub repository is private or unavailable."
               )
         }
-        className="text-accent font-medium focus:outline-none focus-visible:ring-2 ring-accent rounded-sm transition-all"
+        className={`font-medium cursor-pointer focus:outline-none focus-visible:ring-2 ring-accent rounded-sm transition-all ${
+          project.github ? "text-accent" : "text-gray-600"
+        }`}
       >
         Github →
       </motion.button>
+
       <motion.button
-        whileHover={{ x: 4 }}
+        whileHover={project.demo ? { x: 4 } : {}}
         onClick={() =>
           project.demo
             ? window.open(project.demo, "_blank")
             : onModal("This project is not currently hosted.")
         }
-        className="text-accent font-medium focus:outline-none focus-visible:ring-2 ring-accent rounded-sm transition-all"
+        className={`font-medium cursor-pointer  focus:outline-none focus-visible:ring-2 ring-accent rounded-sm transition-all ${
+          project.demo ? "text-accent" : "text-gray-600"
+        }`}
       >
         Demo →
       </motion.button>

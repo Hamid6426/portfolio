@@ -11,7 +11,7 @@ const socialLinks = [
 ];
 
 const Footer = () => (
-  <footer className="fixed bottom-0 w-full z-50 bg-background">
+  <footer className="fixed bottom-0 w-full z-60 bg-background">
     <div className="relative w-full py-2 px-3 2xl:px-0 flex flex-col md:flex-row justify-end items-center gap-2 text-paragraph/80 text-xs font-medium">
       <div className="flex items-center flex-wrap gap-4">
         {socialLinks.map(({ href, label }) => (
